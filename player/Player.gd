@@ -97,9 +97,9 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if Input.is_key_pressed(KEY_SHIFT) or Input.get_joy_axis(0, 6) >= 0.6:
-			current_speed = walk_speed
-		else:
 			current_speed = run_speed
+		else:
+			current_speed = walk_speed
 		if crouched:
 			current_speed = crouch_speed
 	
