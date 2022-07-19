@@ -1,9 +1,118 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
-[sub_resource type="CubeMesh" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="Escena" type="Spatial"]
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+uv1_triplanar = true
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_line_width = 3.0
+
+[sub_resource type="Image" id=7]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 32, 23, 23, 23, 65, 88, 88, 88, 107, 88, 88, 88, 107, 23, 23, 23, 65, 0, 0, 0, 32, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 30, 30, 30, 70, 177, 177, 177, 180, 253, 253, 253, 249, 255, 255, 255, 255, 255, 255, 255, 255, 253, 253, 253, 249, 177, 177, 177, 180, 30, 30, 30, 70, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 30, 30, 30, 70, 229, 229, 229, 221, 255, 254, 254, 255, 255, 209, 209, 255, 255, 175, 175, 255, 255, 175, 175, 255, 255, 209, 209, 255, 255, 254, 254, 255, 229, 229, 229, 221, 30, 30, 30, 69, 0, 0, 0, 2, 0, 0, 0, 31, 176, 176, 176, 180, 255, 254, 254, 255, 255, 169, 169, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 169, 169, 255, 255, 254, 254, 255, 176, 176, 176, 180, 0, 0, 0, 31, 25, 25, 25, 65, 252, 252, 252, 248, 255, 209, 209, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 209, 209, 255, 252, 252, 252, 248, 25, 25, 25, 65, 86, 86, 86, 105, 255, 255, 255, 255, 255, 176, 176, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 176, 176, 255, 255, 255, 255, 255, 86, 86, 86, 105, 88, 88, 88, 107, 255, 255, 255, 255, 255, 175, 175, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 175, 175, 255, 255, 255, 255, 255, 86, 86, 86, 105, 25, 25, 25, 65, 252, 252, 252, 248, 255, 209, 209, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 209, 209, 255, 252, 252, 252, 248, 25, 25, 25, 65, 0, 0, 0, 32, 177, 177, 177, 180, 255, 254, 254, 255, 255, 169, 169, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 132, 132, 255, 255, 169, 169, 255, 255, 254, 254, 255, 176, 176, 176, 180, 0, 0, 0, 31, 0, 0, 0, 2, 30, 30, 30, 70, 230, 230, 230, 222, 255, 254, 254, 255, 255, 209, 209, 255, 255, 175, 175, 255, 255, 175, 175, 255, 255, 209, 209, 255, 255, 254, 254, 255, 229, 229, 229, 221, 30, 30, 30, 70, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 8, 30, 30, 30, 70, 177, 177, 177, 180, 253, 253, 253, 249, 255, 255, 255, 255, 255, 255, 255, 255, 253, 253, 253, 249, 177, 177, 177, 180, 30, 30, 30, 70, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 32, 23, 23, 23, 65, 88, 88, 88, 107, 88, 88, 88, 107, 23, 23, 23, 65, 0, 0, 0, 32, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 12
+}
+
+[sub_resource type="ImageTexture" id=3]
+image = SubResource( 7 )
+size = Vector2( 12, 12 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+flags_use_point_size = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+params_point_size = 12.0
+albedo_texture = SubResource( 3 )
+
+[sub_resource type="ArrayMesh" id=5]
+surfaces/0 = {
+"aabb": AABB( 0, 0, 0, 1.16591, 0.841364, 1e-05 ),
+"array_data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 54, 158, 99, 87, 63, 0, 0, 0, 0, 172, 60, 149, 63, 0, 0, 152, 59, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"array_index_data": PoolByteArray(  ),
+"blend_shape_data": [  ],
+"format": 2194433,
+"index_count": 0,
+"material": SubResource( 4 ),
+"primitive": 0,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}
+
+[node name="Mundo" type="Spatial"]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.25902, 0, 0, -0.289615 )
+width = 9.75581
+height = 0.552538
+depth = 8.12334
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 0.0416952, 0, -1.51449, 0, 1.51507, 0, 2.96328, 0, 0.0815815, 2.73533, 0.241637, -3.4587 )
+polygon = PoolVector2Array( 0, 0, 5.72205e-06, 0.841364, 1.16591, 0.00463867, 1, 0 )
+material = SubResource( 6 )
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 0.00498602, 0, -0.955756, 0, 1.01961, 0, 0.92044, 0, 0.00879824, 3.41226, 0.191677, 2.35606 )
+polygon = PoolVector2Array( 0.100867, -0.0580488, 5.72205e-06, 0.841364, 1.16591, 0.00463867, 1, 0 )
+mode = 1
+spin_degrees = 360.0
+spin_sides = 8
+__meta__ = {
+"_editor_description_": "e"
+}
+
+[node name="ImmediateGeometry" type="ImmediateGeometry" parent="CSGCombiner/CSGPolygon2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1e-05 )
+material_override = SubResource( 1 )
+
+[node name="11239" type="MeshInstance" parent="CSGCombiner/CSGPolygon2/ImmediateGeometry"]
+transform = Transform( 1, 0, 9.31323e-10, 0, 1, 0, 2.32831e-09, 0, 1, -4.76837e-07, 0, 1.00136e-05 )
+visible = false
+mesh = SubResource( 5 )
 material/0 = null
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1.41325, 0, 0, 0, 1, 0, 0, 0, 1.41325, -2.21285, 0, -2.2307 )
+operation = 2
+
+[node name="Player" parent="CSGCombiner" instance=ExtResource( 1 )]
+transform = Transform( 0.464483, 0, 0, 0, 0.599112, 0, 0, 0, 0.464483, 0, 0.334013, 3.59365 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31908, 0.631685, 1.04557 )
+use_collision = true
+width = 0.955299
+height = 0.906219
+depth = 0.968116
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27643, 0.771743, -0.147021 )
+use_collision = true
+width = 0.955299
+height = 1.18669
+depth = 0.968116
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33662, 0.479264, 2.16181 )
+use_collision = true
+width = 0.955299
+height = 0.44305
+depth = 0.968116
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.590584, 0.31362, -0.743541, -0.342019, 0.931821, 0.121375, 0.730913, 0.182623, 0.657582, -2.69618, 2.50223, 5.01386 )

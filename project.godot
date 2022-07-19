@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="juego-godot-1"
+run/main_scene="res://Escenas/Escena.tscn"
 config/icon="res://icon.png"
 
 [rendering]
